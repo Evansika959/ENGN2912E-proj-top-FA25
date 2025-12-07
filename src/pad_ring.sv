@@ -22,7 +22,8 @@ module pad_ring #(
     `endif
 
     inout  wire clk1_PAD,
-    inout  wire rst_n1_PAD,
+    inout  wire wrst_n1_PAD,
+    inout  wire rrst_n1_PAD,
 
     inout  wire clk2_PAD,
     inout  wire rst_n2_PAD,
@@ -39,7 +40,9 @@ module pad_ring #(
 );
 
     wire clk1_PAD2CORE;
-    wire rst_n1_PAD2CORE;
+    wire wrst_n1_PAD2CORE;
+    wire rrst_n1_PAD2CORE;
+
 
     wire clk2_PAD2CORE;
     wire rst_n2_PAD2CORE;
@@ -172,7 +175,7 @@ module pad_ring #(
     
     // Normal input
     (* keep *)
-    gf180mcu_fd_io__in_c rst_n1_pad (
+    gf180mcu_fd_io__in_c wrst_n1_pad (
         `ifdef USE_POWER_PINS
         .DVDD   (VDD),
         .DVSS   (VSS),
@@ -180,8 +183,24 @@ module pad_ring #(
         .VSS    (VSS),
         `endif
     
-        .Y      (rst_n1_PAD2CORE),
-        .PAD    (rst_n1_PAD),
+        .Y      (wrst_n1_PAD2CORE),
+        .PAD    (wrst_n1_PAD),
+        
+        .PU     (),
+        .PD     ()
+    );
+
+    (* keep *)
+    gf180mcu_fd_io__in_c rrst_n1_pad (
+        `ifdef USE_POWER_PINS
+        .DVDD   (VDD),
+        .DVSS   (VSS),
+        .VDD    (VDD),
+        .VSS    (VSS),
+        `endif
+    
+        .Y      (rrst_n1_PAD2CORE),
+        .PAD    (rrst_n1_PAD),
         
         .PU     (),
         .PD     ()

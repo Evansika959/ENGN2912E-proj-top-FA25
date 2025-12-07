@@ -8,7 +8,7 @@
 `define NUM_INPUT_PADS 10
 `define NUM_BIDIR_PADS 13
 `define NUM_ANALOG_PADS 6
-`define NUM_UNUSED_PADS 20
+`define NUM_UNUSED_PADS 19
 
 `endif
 
