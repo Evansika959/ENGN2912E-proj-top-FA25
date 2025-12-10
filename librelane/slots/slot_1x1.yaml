@@ -91,8 +91,8 @@ PAD_WEST: [
     "analog\\[3\\].pad",
     "analog\\[4\\].pad",
     "analog\\[5\\].pad",
+    "analog\\[6\\].pad",
     "unused\\[17\\].pad",
-    "unused\\[18\\].pad",
     
 
     "dvdd_pads\\[5\\].pad",
