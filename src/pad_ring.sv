@@ -31,6 +31,10 @@ module pad_ring #(
     inout  wire clk3_PAD,
     inout  wire clk3_b_PAD,
     inout  wire rst_n3_PAD,
+
+    inout  wire spi_clk0_PAD,
+    inout  wire spi_clk1_PAD,
+    inout  wire spi_clk2_PAD,
     
     inout  wire [NUM_INPUT_PADS-1:0] input_PAD,
     inout  wire [NUM_BIDIR_PADS-1:0] bidir_PAD,
@@ -43,13 +47,16 @@ module pad_ring #(
     wire wrst_n1_PAD2CORE;
     wire rrst_n1_PAD2CORE;
 
-
     wire clk2_PAD2CORE;
     wire rst_n2_PAD2CORE;
 
     wire clk3_PAD2CORE;
     wire clk3_b_PAD2CORE;
     wire rst_n3_PAD2CORE;
+
+    wire spi_clk0_PAD2CORE;
+    wire spi_clk1_PAD2CORE;
+    wire spi_clk2_PAD2CORE;
     
     wire [NUM_INPUT_PADS-1:0] input_PAD2CORE;
     // wire [NUM_INPUT_PADS-1:0] input_CORE2PAD_PU;
@@ -168,6 +175,54 @@ module pad_ring #(
     
         .Y      (clk3_b_PAD2CORE),
         .PAD    (clk3_b_PAD),
+        
+        .PU     (),
+        .PD     ()
+    );
+
+    (* keep *)
+    gf180mcu_fd_io__in_s spi_clk0_pad (
+        `ifdef USE_POWER_PINS
+        .DVDD   (VDD),
+        .DVSS   (VSS),
+        .VDD    (VDD),
+        .VSS    (VSS),
+        `endif
+    
+        .Y      (spi_clk0_PAD2CORE),
+        .PAD    (spi_clk0_PAD),
+        
+        .PU     (),
+        .PD     ()
+    );
+
+    (* keep *)
+    gf180mcu_fd_io__in_s spi_clk1_pad (
+        `ifdef USE_POWER_PINS
+        .DVDD   (VDD),
+        .DVSS   (VSS),
+        .VDD    (VDD),
+        .VSS    (VSS),
+        `endif
+    
+        .Y      (spi_clk1_PAD2CORE),
+        .PAD    (spi_clk1_PAD),
+        
+        .PU     (),
+        .PD     ()
+    );
+
+    (* keep *)
+    gf180mcu_fd_io__in_s spi_clk2_pad (
+        `ifdef USE_POWER_PINS
+        .DVDD   (VDD),
+        .DVSS   (VSS),
+        .VDD    (VDD),
+        .VSS    (VSS),
+        `endif
+    
+        .Y      (spi_clk2_PAD2CORE),
+        .PAD    (spi_clk2_PAD),
         
         .PU     (),
         .PD     ()
