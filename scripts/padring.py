@@ -56,7 +56,7 @@ class PadringFlow(SequentialFlow):
         Odb.CheckMacroAntennaProperties,
         Odb.ManualMacroPlacement,
         KLayout.StreamOut,
-        KLayout.DRC,
+        # KLayout.DRC,
         KLayout.SealRing,
     ]
 

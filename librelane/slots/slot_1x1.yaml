@@ -47,9 +47,9 @@ PAD_EAST: [
     
     "bidir\\[8\\].pad",
     "bidir\\[9\\].pad",
+    "spi_clk2_pad",
     "inputs\\[1\\].pad",
     "inputs\\[2\\].pad",
-    "inputs\\[3\\].pad",
     "bidir\\[10\\].pad",
     
     "dvss_pads\\[3\\].pad",
@@ -63,9 +63,9 @@ PAD_NORTH: [
     "analog\\[1\\].pad",
     "unused\\[11\\].pad",
     rrst_n1_pad,
+    "spi_clk0_pad",
+    "inputs\\[3\\].pad",
     "inputs\\[4\\].pad",
-    "inputs\\[5\\].pad",
-    "inputs\\[6\\].pad",
     "bidir\\[11\\].pad",
 
     "dvss_pads\\[5\\].pad",
@@ -99,9 +99,9 @@ PAD_WEST: [
     "dvss_pads\\[7\\].pad",
 
     "bidir\\[12\\].pad",
-    "inputs\\[7\\].pad",
-    "inputs\\[8\\].pad",
-    "inputs\\[9\\].pad",
+    "inputs\\[5\\].pad",
+    "inputs\\[6\\].pad",
+    "spi_clk1_pad",
 
     "dvdd_pads\\[4\\].pad",
     "dvss_pads\\[6\\].pad",
